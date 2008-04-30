@@ -1,0 +1,50 @@
+This file is the README for Pod::Html version 1.09
+
+INSTALLATION
+
+perl Makefile.PL
+make
+make test
+make install
+
+PREREQUISITES
+
+(All of these are core)
+
+  Carp
+  Config
+  Cwd
+  File::Spec
+  Getopt::Long
+  locale
+
+TESTING
+
+This module requires the following modules for thorough testing:
+
+  (These are core, you should be ok)
+  File::Spec
+  Test::More
+
+BUGS
+
+Please report all bugs on the RT queue:
+
+L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Pod-Html>
+
+AUTHORS
+
+Tom Christiansen, <tchrist@perl.com>.
+
+Currently maintained by David Landgren, <david@landgren.net>.
+
+COPYRIGHT
+
+This module is copyright (C) Tom Christiansen and
+David Landgren 1997-2008. All rights reserved.
+
+LICENSE
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+

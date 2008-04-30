@@ -1,0 +1,7 @@
+1. Better error reporting: report the line number instead of the
+   paragraph number.
+
+2. Act upon the =encoding directive.
+
+3. Better coverage in the test suite.
+
