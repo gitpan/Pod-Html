@@ -24,7 +24,8 @@ WriteMakefile(
     AUTHOR        => 'David Landgren',
     INSTALLDIRS   => ($] >= 5.008001 ? 'perl' : 'site'),
     clean => {
-        FILES => 'cover_db',
+        FILES => 'cover_db t/*.html-t t/*.out
+			t/subdir/pod2htm?.tmp pod2htm?.tmp t/die-end.html',
     },
     PREREQ_PM => {
         'Carp'             => 0,

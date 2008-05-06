@@ -1,5 +1,27 @@
 Revision history for Perl extension Pod::Html.
 
+1.09_02 2008-05-06 07:42:32 UTC
+    - %seen cache purged per-file, to avoid multiple runs of the
+	  same file producing different internal anchor names
+	- Test suite expanded and revised (requires Test::Output and
+	  Test::Exception for thorough testing).
+    - Code coverage improvements
+	  initial:
+----------------------------------- ------ ------ ------ ------ ------ ------
+File                                  stmt   bran   cond    sub    pod  total
+----------------------------------- ------ ------ ------ ------ ------ ------
+blib/lib/Pod/Html.pm                  70.9   51.8   37.7   88.1    6.1   60.1
+Total                                 70.9   51.8   37.7   88.1    6.1   60.1
+----------------------------------- ------ ------ ------ ------ ------ ------
+      current:
+----------------------------------- ------ ------ ------ ------ ------ ------
+File                                  stmt   bran   cond    sub    pod  total
+----------------------------------- ------ ------ ------ ------ ------ ------
+blib/lib/Pod/Html.pm                  95.3   87.5   76.1  100.0  100.0   90.9
+Total                                 95.3   87.5   76.1  100.0  100.0   90.9
+----------------------------------- ------ ------ ------ ------ ------ ------
+
+
 1.09_01 2008-04-30 10:02:55 UTC
     - Dual-lifed from the Perl core distribution.
 

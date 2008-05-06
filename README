@@ -1,4 +1,4 @@
-This file is the README for Pod::Html version 1.09
+This file is the README for Pod::Html version 1.09_02
 
 INSTALLATION
 
@@ -25,6 +25,10 @@ This module requires the following modules for thorough testing:
   (These are core, you should be ok)
   File::Spec
   Test::More
+
+  (These are optional, but very useful tools to have around)
+  Test::Exception
+  Test::Output
 
 BUGS
 

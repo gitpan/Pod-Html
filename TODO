@@ -3,5 +3,120 @@
 
 2. Act upon the =encoding directive.
 
-3. Better coverage in the test suite.
+CURRENT PROBLEMS IN THE MODULE
+(this list is not exhaustive).
 
+Cannot specify the author in META elements. Does not specify
+pod2html version in META elements.
+
+Index is commented out rather than removed.
+
+Cannot suppress HTML preamble/postamble.
+
+Excessive use of <p></p>.
+
+The POD directory scanning code could be simplified by using to
+File::Find for the heavy lifting.
+
+The external cross-referencing code is a baroque construction of
+empirical code.
+
+The link resolution code is baffling (IOW producing <a
+href="$deep_magic">).
+
+Heuristics for spotting links in pure text contains unreachable
+code.
+
+Unwinding of L<C<B<...>>> and variants has some buggy edge cases,
+obsolete tag Z<foo> not excised correctly.
+
+Trailing X< in para incorrect error message.
+
+POD not transformed in =for pod2html this I<word>
+
+=for comment warns.
+
+Cannot resolve bug #9385 due to a fundamental design decision to
+read the data file in paragraph mode.
+
+Many internal item targets map to the same link (e.g.
+	=item do
+	=item do {block}
+wind up with the same name.
+
+Uses global variables, Getopt uses a separate set of variables that
+are then used to overwrite the global variables.
+
+Line 122:
+
+if( ${$dataref}[$i] =~ /^\s+$/m and $dataref->[$i] !~ /^\s/ ){
+
+Can never be true (and mixed dereferencing styles).  Change made
+following Jeff Pinyan's bug report in 2001, but the generated HTML
+is correct anyway.
+
+Line 147:
+
+$Backlink = _html_escape($Backlink) if defined $Backlink;
+
+The variable is initialised to an empty string, thus the statement
+modifier can never be false. Similar cases abound (checking for
+defined() and then non-empty, non-false, ...)
+
+Line 151:
+
+unless (@ARGV && $ARGV[0])
+
+Cannot process a file named '0'
+
+Line 330:
+
+_process_head( $1, $2, $Doindex && $index )
+
+At this point, the file has already been analysed once. If there
+were =head directives, then $index will be defined.
+
+Here in the second pass, we encounter a =head directive, and will
+render it, so logically $index could never be undefined the second
+time through.
+
+Line 351:
+
+next if @Begin_Stack && $Begin_Stack[-1] eq 'html'
+
+Lots of twisty conditionals, all different
+
+	(e.g. $Begin_Stack[-1] ne 'html')
+
+to confuse the unwary throughout the code.
+
+Line 380:
+
+Experimental (undocumented) table recognition heuristics: emitted
+HTML is not compliant with anything (lacking </tr> and </td>).
+
+Line 481:
+
+$opt_netscape variable is configured. Does nothing, not warned as
+deprecated.
+
+Line 1110:
+
+return if $Ignore;
+
+Can't reach this, since the sub is never called if $Ignore is active.
+
+Line 1808:
+
+my $uo = URI::file->new($destination_file,$source)->abs;
+
+dumps core, since the abs() method requires a parameter.
+
+Line 1956:
+
+sub fragment_id_obfuscated()
+
+Routine is no longer be called from module, was never documented.
+
+Test suite has make-work code to deal with its EBCDIC-incompatible
+output.

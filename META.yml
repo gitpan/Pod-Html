@@ -1,7 +1,7 @@
 --- #YAML:1.0
 name:                Pod-Html
-version:             1.09_01
-abstract:            module to convert pod files to HTML
+version:             1.09_02
+abstract:            Convert POD files to HTML
 license:             perl
 author:              
     - David Landgren
