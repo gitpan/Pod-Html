@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                Pod-Html
-version:             1.09_02
+version:             1.09_03
 abstract:            Convert POD files to HTML
 license:             perl
 author:              

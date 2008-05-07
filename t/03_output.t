@@ -8,7 +8,7 @@ use Test::More tests => 14;
 
 SKIP: {
 skip('Test::Output not available', 14)
-    if eval "use Test::Output";
+    if do {eval "use Test::Output" or $@};
 
 my $CWD       = Cwd::cwd();
 my $CACHEDIR  = "$CWD/t/subdir";

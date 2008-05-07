@@ -34,6 +34,8 @@ Trailing X< in para incorrect error message.
 
 POD not transformed in =for pod2html this I<word>
 
+--htmlroot must not have a trailing /
+
 =for comment warns.
 
 Cannot resolve bug #9385 due to a fundamental design decision to

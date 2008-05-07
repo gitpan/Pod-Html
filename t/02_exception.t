@@ -7,7 +7,7 @@ use Test::More tests => 6;
 
 SKIP: {
 skip('Test::Exception not available', 6)
-    if eval "use Test::Exception";
+    if do {eval "use Test::Exception" or $@};
 
 my $no_such_path = '/on/a/path/to/nowhere';
 if (-d $no_such_path) {
