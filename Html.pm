@@ -3,7 +3,7 @@ use strict;
 require Exporter;
 
 use vars qw($VERSION @ISA @EXPORT @EXPORT_OK);
-$VERSION = '1.09_03';
+$VERSION = '1.09_04';
 @ISA = qw(Exporter);
 @EXPORT = qw(pod2html htmlify);
 @EXPORT_OK = qw(anchorify);
@@ -2026,8 +2026,8 @@ Pod::Html - Convert POD files to HTML
 
 =head1 VERSION
 
-This document describes version 1.09_03 of Pod::HTML, released
-2008-05-07.
+This document describes version 1.09_04 of Pod::HTML, released
+2008-05-12.
 
 =head1 SYNOPSIS
 

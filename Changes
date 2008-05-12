@@ -1,5 +1,8 @@
 Revision history for Perl extension Pod::Html.
 
+1.09_04 2008-05-12 11:21:42 UTC
+    - Another boo-boo in t/htmlviec.html
+
 1.09_03 2008-05-07 17:40:55 UTC
     - The CPAN smokers showed me the error of my ways: the
       skip modifiers were borked.

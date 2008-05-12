@@ -3,11 +3,14 @@
 use strict;
 use Pod::Html;
 
-use Test::More tests => 6;
+use Test::More;
 
-SKIP: {
-skip('Test::Exception not available', 6)
-    if do {eval "use Test::Exception" or $@};
+if (do {eval "use Test::Exception" or $@}) {
+    plan skip_all =>'Test::Exception not available';
+}
+else {
+    plan tests => 6;
+}
 
 my $no_such_path = '/on/a/path/to/nowhere';
 if (-d $no_such_path) {
@@ -49,5 +52,3 @@ dies_ok(
     sub {Pod::Html::relative_url('foo', 'bar')},
     'Pod::Html::relative_url() is fatally broken'
 );
-
-} # end SKIP

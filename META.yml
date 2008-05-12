@@ -1,11 +1,11 @@
 --- #YAML:1.0
 name:                Pod-Html
-version:             1.09_03
+version:             1.09_04
 abstract:            Convert POD files to HTML
 license:             perl
 author:              
     - David Landgren
-generated_by:        ExtUtils::MakeMaker version 6.42
+generated_by:        ExtUtils::MakeMaker version 6.44
 distribution_type:   module
 requires:     
     Carp:                          0

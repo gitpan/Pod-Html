@@ -4,11 +4,16 @@ use strict;
 use Cwd;
 use Pod::Html;
 
-use Test::More tests => 14;
-
-SKIP: {
-skip('Test::Output not available', 14)
-    if do {eval "use Test::Output" or $@};
+use Test::More;
+if ($] < 5.007) {
+    plan skip_all => "Test::Output unreliable on 5.6.x, this is $]";
+}
+elsif (do {eval "use Test::Output" or $@}) {
+    plan skip_all =>'Test::Output not available';
+}
+else {
+    plan tests => 14;
+}
 
 my $CWD       = Cwd::cwd();
 my $CACHEDIR  = "$CWD/t/subdir";
@@ -191,8 +196,6 @@ TODO: {
         )}, slurp('t/noheads.html'), 'direct STDOUT'
     );
 };
-
-} # end SKIP
 
 sub slurp {
     my $file = shift;
